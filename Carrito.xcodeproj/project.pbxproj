@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7C437A122809ACE00EF682D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C437A022809ACE00EF682D /* Article.swift */; };
 		F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF742272021400B9EEC6 /* AppDelegate.swift */; };
 		F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF762272021400B9EEC6 /* ViewController.swift */; };
 		F7FBBF7A2272021400B9EEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FBBF782272021400B9EEC6 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7C437A022809ACE00EF682D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		F7FBBF712272021400B9EEC6 /* Carrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FBBF742272021400B9EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FBBF762272021400B9EEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +76,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7C4379F22809AA700EF682D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7C437A022809ACE00EF682D /* Article.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F7FBBF682272021400B9EEC6 = {
 			isa = PBXGroup;
 			children = (
+				F7C4379F22809AA700EF682D /* Model */,
 				F7FBBF732272021400B9EEC6 /* Carrito */,
 				F7FBBF882272021500B9EEC6 /* CarritoTests */,
 				F7FBBF932272021500B9EEC6 /* CarritoUITests */,
@@ -258,6 +269,7 @@
 			files = (
 				F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */,
 				F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */,
+				F7C437A122809ACE00EF682D /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
