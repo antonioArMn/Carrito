@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate {
     
     //Outlets
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var goToCartButton: UIButton!
+    
+    //Variables
+    var total: Float = 0.0
     
     //Headers and Footers
     var sectionsHeaders: [String] = ["Fruits", "Vegetables"]
@@ -63,7 +66,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
         goToCartButton.backgroundColor = UIColor(red:0.12, green:0.51, blue:0.30, alpha:1.0)
         goToCartButton.tintColor = .white
         goToCartButton.translatesAutoresizingMaskIntoConstraints = false
-        goToCartButton.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        goToCartButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         goToCartButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         goToCartButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         goToCartButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -110,16 +113,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //1. Creamos la celda del mismo tipo que definimos en el storyboard: "ArticleCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath)
-        //Reorder control button
-        cell.showsReorderControl = true
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
         
         //2. Get the appropiate model object to display on the cell
         let article = articles[indexPath.section][indexPath.row]
         
         //3. Configuramos celda
-        cell.textLabel?.text = "\(article.symbol) - \(article.name)"
-        cell.detailTextLabel?.text = "$\(article.price)"
+        //cell.textLabel?.text = "\(article.symbol) - \(article.name)"
+        //cell.detailTextLabel?.text = "$\(article.price)"
+        cell.update(with: article)
+        //Reorder control button
+        cell.showsReorderControl = true
+        
+        //Delegate del custom cell
+        cell.delegate = self
         
         //4. Retornamos celda
         return cell
@@ -127,14 +134,38 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     
     //MARK: TableView Delegate
     //Grosor de la celda
-    //func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //    return 90.0
-    //}
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 90.0
+//    }
     //Que celda seleccionamos, deseleccionamos la que este seleccionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = articles[indexPath.section][indexPath.row]
         print("\(article.symbol) \(indexPath)")
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //ArticleTableViewCellDelegate
+    func didTapAdd(article: Article) {
+        let alert = UIAlertController(title: "Item selected", message: "Would you like to add \(article.symbol) \(article.name) to your shopping cart?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { action in
+            self.total = self.total + article.price
+            print("Se eligió el producto: \(article.symbol), con precio: \(article.price), subtotal: \(String(format: "$%.2f", self.total))")
+            self.updateGoToCartButton()
+        }
+        alert.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "No", style: .destructive, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //Actions
+    @IBAction func goToCart(_ sender: UIButton) {
+        print("Go to cart!")
+    }
+    
+    //Functions
+    func updateGoToCartButton() {
+        goToCartButton.setTitle("Go to Shopping Cart 🛒 (\(String(format: "$%.2f", total)))", for: UIControl.State.normal)
     }
 }
 
