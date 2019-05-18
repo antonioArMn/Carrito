@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7C437A122809ACE00EF682D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C437A022809ACE00EF682D /* Article.swift */; };
+		F7C437DF2281EFC400EF682D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */; };
+		F7D7EC6B22906DE300ADE119 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */; };
 		F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF742272021400B9EEC6 /* AppDelegate.swift */; };
 		F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF762272021400B9EEC6 /* ViewController.swift */; };
 		F7FBBF7A2272021400B9EEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FBBF782272021400B9EEC6 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7C437A022809ACE00EF682D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		F7FBBF712272021400B9EEC6 /* Carrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FBBF742272021400B9EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FBBF762272021400B9EEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +80,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7C4379F22809AA700EF682D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7C437A022809ACE00EF682D /* Article.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F7FBBF682272021400B9EEC6 = {
 			isa = PBXGroup;
 			children = (
+				F7C4379F22809AA700EF682D /* Model */,
 				F7FBBF732272021400B9EEC6 /* Carrito */,
 				F7FBBF882272021500B9EEC6 /* CarritoTests */,
 				F7FBBF932272021500B9EEC6 /* CarritoUITests */,
@@ -103,6 +118,8 @@
 				F7FBBF7B2272021500B9EEC6 /* Assets.xcassets */,
 				F7FBBF7D2272021500B9EEC6 /* LaunchScreen.storyboard */,
 				F7FBBF802272021500B9EEC6 /* Info.plist */,
+				F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */,
+				F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */,
 			);
 			path = Carrito;
 			sourceTree = "<group>";
@@ -256,8 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C437DF2281EFC400EF682D /* ArticleTableViewCell.swift in Sources */,
 				F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */,
 				F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */,
+				F7C437A122809ACE00EF682D /* Article.swift in Sources */,
+				F7D7EC6B22906DE300ADE119 /* UIView+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LA858T59PP;
 				INFOPLIST_FILE = Carrito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LA858T59PP;
 				INFOPLIST_FILE = Carrito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
