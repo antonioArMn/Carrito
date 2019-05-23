@@ -16,6 +16,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     
     //Variables
     var total: Float = 0.0
+    //var selectedArticles: [Article] = []
+    var selectedArticles = [Article]()
+    var newArticles = [Article]()
     
     //Headers and Footers
     var sectionsHeaders: [String] = ["Fruits", "Vegetables"]
@@ -79,6 +82,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
         articleListTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
     }
     
+    //Cada vez que la vista vaya a aparecer, refrescamos datos de la tabla. Buena práctica
+    override func viewWillAppear(_ animated: Bool) {
+        articleListTableView.reloadData()
+        //Array tomado de Car list
+        //print(newArticles)
+        selectedArticles = newArticles
+        updateGoToCartButton()
+    }
+    
     //MARK: TableView Data Source
     //Numero de secciones
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -139,8 +151,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
 //    }
     //Que celda seleccionamos, deseleccionamos la que este seleccionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articles[indexPath.section][indexPath.row]
-        print("\(article.symbol) \(indexPath)")
+        //let article = articles[indexPath.section][indexPath.row]
+        //print("\(article.symbol) \(indexPath)")
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -148,8 +160,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     func didTapAdd(article: Article) {
         let alert = UIAlertController(title: "Item selected", message: "Would you like to add \(article.symbol) \(article.name) to your shopping cart?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { action in
-            self.total = self.total + article.price
-            print("Se eligió el producto: \(article.symbol), con precio: \(article.price), subtotal: \(String(format: "$%.2f", self.total))")
+            self.selectedArticles.append(article)
+            //Imprimir lista
+            //for article in self.selectedArticles {
+            //    print("Articulo: \(article.symbol)")
+            //}
+            //print("---------------")
             self.updateGoToCartButton()
         }
         alert.addAction(okAction)
@@ -165,7 +181,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     
     //Functions
     func updateGoToCartButton() {
-        goToCartButton.setTitle("Go to Shopping Cart 🛒 (\(String(format: "$%.2f", total)))", for: UIControl.State.normal)
+        goToCartButton.setTitle("Go to Shopping Cart 🛒 (\(String(format: "$%.2f", getSubtotal())))", for: UIControl.State.normal)
+    }
+    
+    func getSubtotal() -> Float {
+        var subtotal: Float = 0
+        for article in selectedArticles {
+            subtotal = subtotal + article.price
+        }
+        return subtotal
+    }
+    
+    //Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TableViewController {
+            vc.selectedArticles = selectedArticles
+            vc.delegate = self
+        } else {
+            print("Some other controller! \(segue.destination)")
+        }
+    }
+}
+
+extension ViewController: TableViewControllerDelegate {
+    func update(_ carList: [Article]) {
+        print("Paso por update")
+        newArticles = carList
     }
 }
 

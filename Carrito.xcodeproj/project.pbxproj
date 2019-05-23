@@ -10,6 +10,7 @@
 		F7C437A122809ACE00EF682D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C437A022809ACE00EF682D /* Article.swift */; };
 		F7C437DF2281EFC400EF682D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */; };
 		F7D7EC6B22906DE300ADE119 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */; };
+		F7D7EC6D2295C71500ADE119 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7EC6C2295C71500ADE119 /* TableViewController.swift */; };
 		F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF742272021400B9EEC6 /* AppDelegate.swift */; };
 		F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBBF762272021400B9EEC6 /* ViewController.swift */; };
 		F7FBBF7A2272021400B9EEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FBBF782272021400B9EEC6 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		F7C437A022809ACE00EF682D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		F7D7EC6C2295C71500ADE119 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F7FBBF712272021400B9EEC6 /* Carrito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carrito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FBBF742272021400B9EEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FBBF762272021400B9EEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				F7FBBF802272021500B9EEC6 /* Info.plist */,
 				F7C437DE2281EFC400EF682D /* ArticleTableViewCell.swift */,
 				F7D7EC6A22906DE300ADE119 /* UIView+Anchor.swift */,
+				F7D7EC6C2295C71500ADE119 /* TableViewController.swift */,
 			);
 			path = Carrito;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C437DF2281EFC400EF682D /* ArticleTableViewCell.swift in Sources */,
+				F7D7EC6D2295C71500ADE119 /* TableViewController.swift in Sources */,
 				F7FBBF772272021400B9EEC6 /* ViewController.swift in Sources */,
 				F7FBBF752272021400B9EEC6 /* AppDelegate.swift in Sources */,
 				F7C437A122809ACE00EF682D /* Article.swift in Sources */,
