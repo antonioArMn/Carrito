@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         
         //Add constraints
-        //goToCartButton
+        //buyButton
         buyButton.backgroundColor = UIColor(red:0.12, green:0.51, blue:0.30, alpha:1.0)
         buyButton.tintColor = .white
         buyButton.translatesAutoresizingMaskIntoConstraints = false

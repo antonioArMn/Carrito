@@ -48,7 +48,7 @@
                                                     <rect key="frame" x="304" y="2.8421709430404007e-14" width="56" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <state key="normal" title="+"/>
+                                                    <state key="normal" title="Add"/>
                                                     <connections>
                                                         <action selector="addArticle:" destination="VZC-MZ-ccX" eventType="touchUpInside" id="G34-x6-wDc"/>
                                                     </connections>

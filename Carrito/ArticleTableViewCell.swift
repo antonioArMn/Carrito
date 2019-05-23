@@ -38,11 +38,6 @@ class ArticleTableViewCell: UITableViewCell {
         priceLabel.textAlignment = .right
         priceLabel.anchor(top: contentView.topAnchor, leading: nameLabel.trailingAnchor, trailing: nil, bottom: nil, size: CGSize(width: 150, height: contentView.frame.size.height))
         
-        addButton.backgroundColor = .white
-        addButton.layer.cornerRadius = 5
-        addButton.layer.borderWidth = 1
-        addButton.layer.borderColor = UIColor(red:0.89, green:0.42, blue:0.42, alpha:1.0).cgColor
-        addButton.tintColor = UIColor(red:0.89, green:0.42, blue:0.42, alpha:1.0)
         addButton.anchor(top: contentView.layoutMarginsGuide.topAnchor, leading: nil, trailing: contentView.layoutMarginsGuide.trailingAnchor, bottom: contentView.layoutMarginsGuide.bottomAnchor)
         
     }
