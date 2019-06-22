@@ -43,6 +43,9 @@ class TableViewController: UITableViewController {
         //Update buy button
         updateBuyButton()
         
+        //Safe items bug
+        delegate?.update(selectedArticles)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }

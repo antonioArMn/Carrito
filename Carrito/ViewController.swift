@@ -84,10 +84,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     
     //Cada vez que la vista vaya a aparecer, refrescamos datos de la tabla. Buena práctica
     override func viewWillAppear(_ animated: Bool) {
-        articleListTableView.reloadData()
+        //articleListTableView.reloadData()
         //Array tomado de Car list
         //print(newArticles)
         selectedArticles = newArticles
+        articleListTableView.reloadData()
         updateGoToCartButton()
     }
     
